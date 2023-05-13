@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./comics.css";
@@ -6,7 +5,6 @@ import loadingImage from "../../assets/loading.gif";
 import notavailable from "../../assets/notavailable.png";
 
 const Comics = () => {
-  const navigate = useNavigate();
   const [data, setData] = useState();
   const [isLoading, SetIsLoading] = useState(true);
   const [search, setSearch] = useState("");
