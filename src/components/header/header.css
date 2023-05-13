@@ -1,0 +1,77 @@
+header {
+  background-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 5px 0;
+  width: 96vw;
+  height: 80px;
+  /* border: white solid 2px; */
+}
+
+.header-logo-area {
+  display: flex;
+}
+
+.header-container img {
+  height: 70px;
+  width: 100%;
+  margin-top: 20px;
+  opacity: 0.8;
+}
+.header-container img:hover {
+  opacity: 1;
+}
+
+.header-container {
+  display: flex;
+  font-size: 35px;
+  font-family: Marvel, sans-serif;
+}
+
+.header-navigation {
+  display: flex;
+  align-items: center;
+}
+
+.header-navigation li {
+  margin: 30px;
+}
+.header-container a {
+  text-decoration: none;
+  color: yellow;
+  cursor: cell;
+  /* transition: 0.3s; */
+  position: relative;
+  text-shadow: 1px 1px 2px red, 0 0 1em rgb(127, 53, 135), 0 0 0.2em blue;
+}
+.header-container a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  border-radius: 4px;
+  background-color: yellow;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+.header-container a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.header-login {
+  font-size: 20px;
+}
+.header-signup {
+  display: flex;
+  gap: 10px;
+}

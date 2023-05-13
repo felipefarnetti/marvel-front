@@ -1,0 +1,124 @@
+.character-page {
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 97%;
+  /* border: white solid 2px; */
+  margin: 0 auto;
+}
+
+.character-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.character-container a {
+  text-decoration: none;
+}
+
+.character-search-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  height: 40px;
+  margin-bottom: 10px;
+}
+.character-search-container input {
+  width: 300px;
+  font-size: 18px;
+  text-align: center;
+}
+.character-search-container button {
+  background-color: red;
+  color: yellow;
+  font-size: 16px;
+  border: white solid 2px;
+  opacity: 0.6;
+}
+.character-search-container button:hover {
+  opacity: 1;
+}
+
+.character-card {
+  display: flex;
+  /* flex-basis: 25%; */
+  margin-top: 15px;
+  background-color: black;
+}
+.character-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 350px;
+  border: solid white 1px;
+  /* border-radius: 100px; */
+  padding: 10px;
+}
+
+.character-name {
+  width: 120px;
+  text-align: center;
+  font-size: 16px;
+  color: red;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-shadow: #fc0 1px 0 10px;
+}
+
+.character-name:hover {
+  overflow: unset;
+  color: violet;
+  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+.character-image {
+  height: 200px;
+  width: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  object-fit: cover;
+  border-radius: 100px;
+  border: solid white 1px;
+  opacity: 0.6;
+  box-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+.character-image:hover {
+  opacity: 1;
+  box-shadow: 1px 1px 2px red, 0 0 1em rgb(171, 165, 53), 0 0 0.2em blue;
+}
+
+.character-description {
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  width: 200px;
+  line-height: 15px;
+  height: 95px;
+  overflow: hidden;
+}
+
+.character-footer {
+  height: 90px;
+  padding: 20px;
+}
+
+.character-footer-buttons {
+  margin: 20px 80px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.character-footer button {
+  background-color: red;
+  color: yellow;
+  font-size: 16px;
+  border: white solid 2px;
+  opacity: 0.6;
+}
+
+.character-footer button:hover {
+  opacity: 1;
+}

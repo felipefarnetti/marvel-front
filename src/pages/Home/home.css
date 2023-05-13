@@ -1,0 +1,11 @@
+.home-main {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container img {
+  width: 80px;
+
+  flex-wrap: nowrap;
+  position: sticky;
+}
