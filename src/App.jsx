@@ -42,7 +42,7 @@ function App() {
 
   return (
     <Router>
-      <Header />
+      <Header handleToken={handleToken} token={token} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup handleToken={handleToken} />} />

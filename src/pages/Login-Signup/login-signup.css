@@ -2,16 +2,17 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 .signup {
-  margin: 0 auto;
+  margin: 50px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
+  font-size: 24px;
 }
 .signup h2 {
   margin: 24px;
-  font-weight: 400;
+  font-weight: bold;
+  color: yellow;
 }
 
 .signup form {
@@ -33,47 +34,18 @@ body {
   color: #999;
 }
 .signup a {
-  color: #2cb1ba;
-  font-size: 12px;
+  color: yellow;
+  font-size: 14px;
   text-decoration: none;
   margin-top: 20px;
-}
-.checkbox-container {
-  width: auto;
-  margin-bottom: 20px;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-}
-
-.checkbox {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  outline: none;
-}
-.checkbox input {
-  cursor: pointer;
-  -webkit-transform: scale(2);
-  margin-right: 10px;
-}
-.checkbox h3 {
-  font-size: 14px;
-  color: #666;
-}
-.checkbox-container p {
-  font-size: 12px;
-  color: #999;
 }
 
 .signup button {
   width: 275px;
   height: 45px;
   margin-top: 20px;
-  background-color: #2cb1ba;
-  border: none;
+  background-color: BLACK;
+  border: white solid 2px;
   border-radius: 5px;
   color: white;
   font-size: 16px;

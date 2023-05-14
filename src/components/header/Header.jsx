@@ -3,7 +3,7 @@ import logo from "../../assets/marvel-logo.svg";
 import stars from "../../assets/stars1.gif";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ token, handleToken }) => {
   return (
     <header className="header-container">
       <div>
@@ -23,14 +23,34 @@ const Header = () => {
         </li>
         <li>FAVORIS</li>
       </ul>
-      <ul className="header-signup">
-        <li className="header-login">
-          <Link to="/login">LOGIN</Link>
-        </li>
-        <li className="header-login">
-          <Link to="/signup">SIGNUP</Link>
-        </li>
-      </ul>
+
+      {token ? (
+        <Link to={"/"}>
+          <ul>
+            <li className="header-signup">
+              <li className="header-login">
+                <Link
+                  onClick={() => {
+                    handleToken(null);
+                  }}
+                  to="/"
+                >
+                  LOGOUT
+                </Link>
+              </li>
+            </li>
+          </ul>
+        </Link>
+      ) : (
+        <ul className="header-signup">
+          <li className="header-login">
+            <Link to="/login">LOGIN</Link>
+          </li>
+          <li className="header-login">
+            <Link to="/signup">SIGNUP</Link>
+          </li>
+        </ul>
+      )}
     </header>
   );
 };
