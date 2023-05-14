@@ -7,14 +7,13 @@ const Header = () => {
   return (
     <header className="header-container">
       <div>
-        <img src={stars} alt="" />
+        <img className="header-stars" src={stars} alt="" />
       </div>
       <div className="header-logo-area">
         <Link to={"/"}>
           <img src={logo} alt="marvel logo" />
         </Link>
       </div>
-
       <ul className="header-navigation">
         <li>
           <Link to="/characters">CHARACTERS</Link>

@@ -5,11 +5,21 @@ import "./characters.css";
 import loadingImage from "../../assets/loading.gif";
 import notavailable from "../../assets/notavailable.png";
 
-const Characters = () => {
+const Characters = ({ handleToken, handleFavorites, favorites }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+
+  const addToFavorites = (character) => {
+    const updatedFavorites = [...favorites, { ...character }];
+    handleFavorites(updatedFavorites);
+  };
+
+  const removeFromFavorites = (characterId) => {
+    const updatedFavorites = favorites.filter((c) => c.id !== characterId);
+    handleFavorites(updatedFavorites);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -61,42 +71,56 @@ const Characters = () => {
           </div>
         ) : (
           <>
-            {data.map((character) => {
-              return (
-                <Link
-                  to={`/character/${character._id}`}
-                  key={character._id}
-                  state={data}
-                >
-                  <article className="character-card">
+            <div className="character-container">
+              {data.map((character) => {
+                const isFavorite = favorites.some((c) => c.id === character.id);
+                return (
+                  <article className="character-card" key={character._id}>
                     <div className="character-content">
-                      <img
-                        className="character-image"
-                        src={
-                          character.thumbnail.path +
-                            "." +
-                            character.thumbnail.extension ===
-                            "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg" ||
-                          character.thumbnail.path +
-                            "." +
-                            character.thumbnail.extension ===
-                            "http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708.gif"
-                            ? notavailable
-                            : character.thumbnail.path +
+                      {isFavorite ? (
+                        <button
+                          className="fav-button"
+                          onClick={() => removeFromFavorites(character.id)}
+                        >
+                          ❤️
+                        </button>
+                      ) : (
+                        <button
+                          className="fav-button"
+                          onClick={() => addToFavorites(character)}
+                        >
+                          🤍
+                        </button>
+                      )}
+                      <Link to={`/character/${character._id}`} state={data}>
+                        <img
+                          className="character-image"
+                          src={
+                            character.thumbnail.path +
                               "." +
-                              character.thumbnail.extension
-                        }
-                        alt=""
-                      />
-                      <h2 className="character-name">{character.name}</h2>
-                      <p className="character-description">
-                        {character.description}
-                      </p>
+                              character.thumbnail.extension ===
+                              "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg" ||
+                            character.thumbnail.path +
+                              "." +
+                              character.thumbnail.extension ===
+                              "http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708.gif"
+                              ? notavailable
+                              : character.thumbnail.path +
+                                "." +
+                                character.thumbnail.extension
+                          }
+                          alt=""
+                        />
+                        <h2 className="character-name">{character.name}</h2>
+                        <p className="character-description">
+                          {character.description}
+                        </p>
+                      </Link>
                     </div>
                   </article>
-                </Link>
-              );
-            })}
+                );
+              })}
+            </div>
           </>
         )}
       </div>

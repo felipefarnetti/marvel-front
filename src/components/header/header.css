@@ -14,6 +14,11 @@ header {
   /* border: white solid 2px; */
 }
 
+.header-stars {
+  height: 40px !important;
+  width: 40px !important;
+}
+
 .header-logo-area {
   display: flex;
 }

@@ -41,7 +41,13 @@
 .comics-search-container button:hover {
   opacity: 1;
 }
-
+.fav-button {
+  border: none;
+  background: none;
+  border-radius: 30%;
+  font-size: 14px;
+  padding: 0;
+}
 .comics-card {
   display: flex;
   /* flex-basis: 25%; */
@@ -77,8 +83,6 @@
 .comics-image {
   height: 200px;
   width: 200px;
-  margin-top: 10px;
-  margin-bottom: 10px;
   object-fit: cover;
   border-radius: 100px;
   border: solid white 1px;

@@ -37,10 +37,17 @@
   border: white solid 2px;
   opacity: 0.6;
 }
+
 .character-search-container button:hover {
   opacity: 1;
 }
-
+.fav-button {
+  border: none;
+  background: none;
+  border-radius: 30%;
+  font-size: 14px;
+  padding: 0;
+}
 .character-card {
   display: flex;
   /* flex-basis: 25%; */
@@ -51,7 +58,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 350px;
+  height: 400px;
   border: solid white 1px;
   /* border-radius: 100px; */
   padding: 10px;
@@ -76,8 +83,6 @@
 .character-image {
   height: 200px;
   width: 200px;
-  margin-top: 10px;
-  margin-bottom: 10px;
   object-fit: cover;
   border-radius: 100px;
   border: solid white 1px;
@@ -95,7 +100,7 @@
   text-align: center;
   width: 200px;
   line-height: 15px;
-  height: 95px;
+  height: 160px;
   overflow: hidden;
 }
 
@@ -118,7 +123,6 @@
   border: white solid 2px;
   opacity: 0.6;
 }
-
 .character-footer button:hover {
   opacity: 1;
 }
