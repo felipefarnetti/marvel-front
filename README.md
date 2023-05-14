@@ -20,3 +20,8 @@ Favorites pages with no content (link desactivated)
 
 backend available on:
 https://github.com/felipefarnetti/marvel-back
+back end hosted on Northflank as a service
+
+this frontend is hosted on netlifly:
+https://redmarvel.netlify.app/
+
