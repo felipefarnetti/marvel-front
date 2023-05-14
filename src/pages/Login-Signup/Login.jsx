@@ -13,10 +13,14 @@ const Login = ({ handleToken }) => {
 
   return (
     <div className="signup">
-      <h2>Se connecter</h2>
+      <h2>Login</h2>
       <form
         onSubmit={async (event) => {
           event.preventDefault();
+          if (!email || !password) {
+            setErrorMessage("Please fill in all fields.");
+            return;
+          }
           try {
             const response = await axios.post(
               "https://site--marvel-backend--4w9wbptccl4w.code.run/user/login",
@@ -30,19 +34,11 @@ const Login = ({ handleToken }) => {
             console.log(error.message);
             console.log(error.response.data);
             if (error.response.status === 401) {
-              if (error.response.data.message === "Unauthorized") {
-                console.log(error.response.data.message);
-                setErrorMessage("Email ou mot de passe incorrect");
-              } else if (error.response.data.message === "User not found") {
-                console.log(error.response.data.message);
-                setErrorMessage("Utilisateur non rencontré");
-              } else {
-                console.log(error.response.data.message);
-                setErrorMessage("Utilisateur ou mot de passe incorrects.");
-              }
+              console.log(error.response.data.message);
+              setErrorMessage("Wrong email or password.");
             } else {
               console.log(error.response.data.message);
-              setErrorMessage("Utilisateur ou mot de passe incorrects");
+              setErrorMessage("Wrong email or password.");
             }
           }
         }}
@@ -55,18 +51,18 @@ const Login = ({ handleToken }) => {
         />
         <input
           type="password"
-          placeholder="Mot de passe"
+          placeholder="Password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         />
-        <button type="submit">Se connecter</button>
+        <button type="submit">Connect</button>
       </form>
       {errorMessage && (
         <p style={{ color: "red", fontSize: 14, marginTop: 15 }}>
           {errorMessage}
         </p>
       )}
-      <Link to="/signup">Pas encore de compte ? Inscris-toi !</Link>
+      <Link to="/signup">Don't have an account ?</Link>
     </div>
   );
 };

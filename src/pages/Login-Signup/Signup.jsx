@@ -13,7 +13,7 @@ const Signup = ({ handleToken }) => {
 
   return (
     <div className="signup">
-      <h2>S'inscrire</h2>
+      <h2>Create your account</h2>
       <form
         onSubmit={async (event) => {
           event.preventDefault();
@@ -33,11 +33,9 @@ const Signup = ({ handleToken }) => {
             }
           } catch (error) {
             if (error.response.status === 409) {
-              setErrorMessage(
-                "Cet email est dejà utilisé, veuillez en choisir un autre"
-              );
+              setErrorMessage("This email is already used.");
             } else if (error.response.data.message === "Missing parameters") {
-              setErrorMessage("Veuillez remplir tous les champs");
+              setErrorMessage("Please fill all the fields");
             }
           }
         }}
@@ -66,14 +64,14 @@ const Signup = ({ handleToken }) => {
           }}
           // value={password}
         />
-        <button type="submit">S'inscrire</button>
+        <button type="submit">Signup</button>
       </form>
       {errorMessage && (
         <p style={{ color: "red", fontSize: 14, marginTop: 15 }}>
           {errorMessage}
         </p>
       )}
-      <Link to="/login">Tu as déjà un compte ? Connecte-toi !</Link>
+      <Link to="/login">Already have an account ?</Link>
     </div>
   );
 };
